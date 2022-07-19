@@ -22,13 +22,13 @@ print(my_dict["hello_world"])  # test
 #### Linux/macOS
 
 ```
-python3 -m pip install -U pointers.py
+python3 -m pip install -U snakedict
 ```
 
 #### Windows
 
 ```
-py -3 -m pip install -U pointers.py
+py -3 -m pip install -U snakedict
 ```
 
 ### Usage
