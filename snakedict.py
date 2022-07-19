@@ -36,7 +36,11 @@ def convert(data: Dict[A, T], *, use_regex: bool = True) -> Dict[A, T]:
     for i in data:
         if isinstance(i, str):
             if FINDER_REGEX.match(i):
-                new[_switch_case(i) if use_regex else _switch_case_str(i)] = new.pop(i)
+                new_name: str = (
+                    _switch_case(i) if use_regex else _switch_case_str(i)
+                )  # fmt: off
+                new[new_name] = new.pop(i)  # type: ignore
+                # apparently mypy cant see isinstance
 
     return new
 
